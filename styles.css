@@ -1,0 +1,17 @@
+body {
+    background-color: grey
+  }
+  
+  p {
+    font-family: arial;
+    font-size: 15px;
+    color: blue;
+  }
+  
+  div {
+    font-family: arial;
+    background-color: white;
+    font-size: 12px;
+    width: 300px;
+    color: black;
+  }
