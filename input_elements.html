@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+    <script src="script_input_elements.js"></script>
     <title>HTML Demo</title>
 </head>
 <body>
@@ -27,7 +27,7 @@
 
     <div id="input_email">
         <h5>This is an input email element</h5>
-        <input type="email">
+        <input type="email" placeholder="example@gmail.com" required>
     </div>
 
     <div id="input_number">
@@ -47,7 +47,9 @@
 
     <div id="input_tel">
         <h5>This is an input tel element</h5>
-        <input type="tel" pattern="[0-9]{2}-[0-9]{9}">
+        <input type="tel" id="telInput" pattern="[0-9]{2}-[0-9]{9}" placeholder="Format: XX-XXXXXXXXX">
+        <button onclick="validateAndStore()">Validate & Store</button>
+        <p id="message"></p>
     </div>
 
     <div id="input_url">
