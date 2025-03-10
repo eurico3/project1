@@ -1,56 +1,147 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Contact Details</title>
-        <script type="application/javascript">
-            function checkdata() {
-                // Create references to the input elements
-                var username = document.getElementById("name");
-                var email_address = document.getElementById("email");
+<head>
+    <title>Contact Details</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding-top: 50px;
+        }
 
-                // Trim values to prevent only spaces from being considered valid input
-                var usernameValue = username.value.trim();
-                var emailValue = email_address.value.trim();
+        h2 {
+            color: #333;
+        }
 
-                // Check if username field is empty
-                if (usernameValue === "") {
-                    alert("Please enter the name");
-                    username.focus();
-                    return false; // Prevents form submission
-                }
+        /* Form Container */
+        .form-container {
+            background: white;
+            width: 350px;
+            padding: 20px;
+            margin: auto;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            text-align: left;
+        }
 
-                // Check if email field is empty
-                if (emailValue === "") {
-                    alert("Please enter the email");
-                    email_address.focus();
-                    return false; // Prevents form submission
-                }
+        /* Label Styling */
+        label {
+            font-size: 16px;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
 
-                // Ensure email has a valid format
-                var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!emailPattern.test(emailValue)) {
-                    alert("Please enter a valid email address");
-                    email_address.focus();
-                    return false;
-                }
+        /* Input Fields */
+        input[type="text"] {
+            width: calc(100% - 20px); /* Ensures proper spacing inside the container */
+            padding: 10px;
+            margin-bottom: 15px; /* Adds spacing between inputs */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            display: block; /* Ensures it takes up full width */
+        }
 
-                // If all is well, return true
-                alert("Everything is updated");
-                return true;
+        input[type="text"]:focus {
+            border-color: #007BFF;
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+
+        /* Button Group */
+        .button-group {
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        input[type="submit"],
+        input[type="reset"] {
+            width: 45%;
+            padding: 10px;
+            font-size: 16px;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #007BFF;
+        }
+
+        input[type="reset"] {
+            background-color: #DC3545;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        input[type="reset"]:hover {
+            background-color: #a71d2a;
+        }
+    </style>
+
+    <script type="application/javascript">
+        function checkdata() {
+            // Create references to the input elements
+            var username = document.getElementById("name");
+            var email_address = document.getElementById("email");
+
+            // Trim values to prevent only spaces from being considered valid input
+            var usernameValue = username.value.trim();
+            var emailValue = email_address.value.trim();
+
+            // Check if username field is empty
+            if (usernameValue === "") {
+                alert("Please enter the name");
+                username.focus();
+                return false;
             }
-        </script>
-    </head>
-    <body>
-        <h2>Enter your contact details:</h2> <br>
+
+            // Check if email field is empty
+            if (emailValue === "") {
+                alert("Please enter the email");
+                email_address.focus();
+                return false;
+            }
+
+            // Ensure email has a valid format
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(emailValue)) {
+                alert("Please enter a valid email address");
+                email_address.focus();
+                return false;
+            }
+
+            // If all is well, return true
+            alert("Everything is updated");
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h2>Enter your contact details:</h2>
+
+    <div class="form-container">
         <form id="form1" onsubmit="return checkdata()">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name">
-            <br><br>
+
             <label for="email">Email Address:</label>
             <input type="text" id="email" name="email">
-            <br><br>
-            <input type="submit" value="Submit">
-            <input type="reset" value="Reset">
+
+            <div class="button-group">
+                <input type="reset" value="Reset">
+                <input type="submit" value="Submit">
+            </div>
         </form>
-    </body>
+    </div>
+</body>
 </html>
+
+
